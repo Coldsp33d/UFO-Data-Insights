@@ -1,0 +1,8 @@
+deploy/
+image_space/
+imagecat/
+
+.DS_Store
+
+__pycache__/
+.ibynb_checkpoints
