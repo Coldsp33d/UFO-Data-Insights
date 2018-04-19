@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>USC Data Science - UFO Database</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Scrolling Nav CSS -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <div id="nav-main">
+    <nav class="navbar mav-main navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+            </div>
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">  
+              <nav id="nav-wrap">
+                <ul class="nav navbar-nav navbar-custom">
+                    <li class="current"><a class="page-scroll" href="#page-top" style="color:white">Home</a></li>
+                    <li class="hidden"><a class="page-scroll" href="#page-top" style="color:white"></a></li>
+                    <li><a class="page-scroll" href="#about" style="color:#ffffff">About</a></li>
+                    <li><a class="page-scroll" href="#features" style="color:#ffffff">Insights</a></li>
+                    <li><a class="page-scroll" style="color:#ffffff" href="#learn-more">Partners</a></li>
+                </ul>
+              </nav>
+
+                <a href="http://usc.edu" class="pull-right">
+                  <img src="images/usc-primary-logotype.svg" width="176px" height="38px">
+                </a>
+            </div>
+        </div>
+    </nav>
+  </div>
+
+    <!-- Intro Section -->
+    <div>
+        <section id="intro" class="intro-section" style="background-image: url('images/ufoedited.png'); opacity: 1.0;background-attachment: fixed; background-size: cover;
+          background-repeat: no-repeat;">
+            <div class="container" style="padding-top:100px">
+                <div class="row">
+                    <div class="col-lg-12" >
+                        <h1 class="title">UFO Data Insights</h1>
+                        <br><a style="text-decoration: none;" href="http://irds.usc.edu/"><h3 id="irdsgroup">USC Data Science</h3></a>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:180px">
+                    <div class="col-md-3 col-md-offset-1">
+                      <a class="btn btn-default btn-lg page-scroll"
+                      href="#about" style="margin-top:2%">Learn More</a>
+                    </div>
+
+                    <div class="col-md-4">
+                      <a class="btn btn-default btn-lg page-scroll"
+                      href="html/d3-examples.html" style="margin-top:2%; margin-left:-2%;">Explore Visualizations</a>
+                    </div>
+
+                    <div class="col-md-3">
+                      <a class="btn btn-default btn-lg page-scroll pull-left"
+                      href="html/deep-insights.html" style="margin-top:2%; margin-left: 5%;">Deep Insights</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+
+    <!-- About Section -->
+    <div>
+        <section id="about" class="about-section" style="margin-top:-1%; margin-bottom:5%">
+            <div class="container">
+                <div class="row">
+
+                    <hr class="about-divider">
+                    <h1>About Us</h1>
+                    <hr class="about-divider">
+
+                    <div class="jumbotron" style="margin-bottom:5%; margin-top:3%">
+                        <h2>What is UFO Data Insights?</h2>
+                        <p class="lead text-left" style="margin-top:2%">JPL and USC, under the direction of Dr. Chris Mattmann, have worked to collect a corpus of “deep web” polar datasets spanning many file types containing scientific data such as images, videos, and other information on the Web. These pieces of data were collected using Apache Nutch, Apache Tika, and Apache Solr.</p>
+                        <p class="lead text-left">Our goal is to aggregate this data into an intuitive search engine that scientists can utilize for polar research. Additionally, the data is analyzed and illustrated using visualization APIs Banana and D3.js, providing researchers a better understanding of the data's relationship within the Polar ecosystem.</p>
+                    </div>
+
+                    <div class="col-md-4">
+                       <div class="media">
+                          <div class="media-left">
+                              <img class="media-object" src="images/searchimg.jpg" alt="...">
+                          </div>
+                          <div class="media-body">
+                              <h4 class="media-heading">Search Engine</h4>
+                              Providing researchers with a powerful tool to find relevant data sets and websites.
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                       <div class="media">
+                          <div class="media-left">
+                              <img class="media-object" src="images/visualimg.jpg" alt="...">
+                          </div>
+                          <div class="media-body">
+                              <h4 class="media-heading">Visualizer</h4>
+                              Illustrating data set connections and related terms to narrow searches.
+                          </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                       <div class="media">
+                          <div class="media-left">
+                              <img class="media-object" src="images/publicizer.png" alt="...">
+                          </div>
+                          <div class="media-body">
+                              <h4 class="media-heading">Publicizer</h4>
+                              Demonstrate the value of these polar data sets to the NSF, USC, and NASA.
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Features Section -->
+    <div>
+        <section id="features" class="features-section" style="margin-top:-1%; margin-bottom:5%">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <hr class="featurette-divider">
+                        <h1>Insights</h1>
+                        <hr class="featurette-divider">
+                    </div>
+
+
+                    <!--D3.js Feature-->
+                    <hr class="featurette-divider">
+                    <div class="row featurette" style="margin-top:3%; margin-bottom:3%">
+                        <div class="col-md-7 col-md-push-5">
+                          <h2 align=left class="featurette-heading"><a href="https://d3js.org/">D3.js</a>. <span class="text-muted">See for yourself.</span></h2>
+                          <p align=left class="lead">View data sets from a variety of sources to better understand polar relationships. </p>
+                          <p align=left class="lead"> <a href="html/d3-examples.html"> View some of our visualizations. </a> </p>
+                        </div>
+                        <div class="col-md-5 col-md-pull-7">
+                          <img class="featurette-image img-responsive center-block" src="images/d3_feature.png" alt="Generic placeholder image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- Learn More Section -->
+	<div>
+		<section id="learn-more" class="learn-more-section">
+			<div class="container">
+				 <div class="col-lg-12" style="margin-top:8%">
+					  <hr class="featurette-divider" style="margin-top:-1%">
+					  <h1 align=center>USC Data Science Partner Sites</h1>
+					  <hr class="featurette-divider">
+				 </div>
+				 <div class="row">
+				  <div class="col-md-4 col-sm-4 col-xs-6" style="margin-top:3%">
+						  <div class="panel panel-success">
+							  <div class="panel-heading">
+							   <h4>TREC/Data Description</h4>
+							  </div>
+							  <div class="panel-body">
+								   <p>
+									  The goal of the Text Retrieval Conference (TREC) is to encourage research in information retrieval
+									  from large text collections by providing interesting and understudied domains of documents to crawl.
+								   </p>
+								   <p>
+									  Currently, the polar domains contains the
+									  NSF-funded Advanced Cooperative Artic Data and Information System (ACADIS),
+									  NASA-funded Antarctic Master Directory (AMD), and National Snow and Ice Data Center (NSIDC) Arctic Data Explorer.
+									  Our data was retrieved using these directories and submitted to TREC in 2015.
+								   </p>
+
+							  </div>
+							  <div class="panel-footer">
+								  <a href="https://github.com/chrismattmann/trec-dd-polar/" class="btn btn-success ">Visit TREC</a>
+							  </div>
+						  </div>
+				  </div>
+
+				  <div class="col-md-4 col-sm-4 col-xs-6" style="margin-top:3%">
+					  <div class="panel panel-info">
+							  <div class="panel-heading">
+							   <h4>IRDS</h4>
+							  </div>
+							  <div class="panel-body">
+								  <p>
+  									 The Information Retrieval and Data Science Group’s (I.R.D.S.) mission is to research and develop
+                     new methodology and open source software to analyze, ingest, process, and manage Big Data and to turn it into
+                     information.
+								  </p>
+								  <p>
+									   We have expertise in data collection and contribute to the world's largest and most often downloaded open-source projects, working with NASA, DARPA, DHS, NIH across a number of domains, Earth Science,Planetary Science, Astronomy, defense, and private industry.
+								  </p>
+							  </div>
+							  <div class="panel-footer">
+								  <a href="http://irds.usc.edu/" class="btn btn-info ">Visit IRDS</a>
+							  </div>
+                        </div>
+				  </div>
+				</div>
+				<div class="col-lg-12" style="margin-top:5%;" >
+                  <h3 align=center>Credits</h3>
+                  <hr class="featurette-divider">
+                  <div class="row">
+                  <p>Dr. Chris Mattmann - <a href="http://sunset.usc.edu/~mattmann/">Visit his website</a></p>
+                  <p>CS401 Group (Lorraine Sposto, Jonathan Luu, Ruthvik Peddawandla, Titus Jung, Janet Kim)</p>
+                  <p>CS599 Spring 2018 Class - <a href="http://irds.usc.edu/classes/cs599_2018a/">Visit the class website</a></p>
+                  <p>CS572 Spring 2015 Class - <a href="http://sunset.usc.edu/classes/cs572_2015/">Visit the class website</a></p>
+				</div>
+            </div>
+			</div>
+		</section>
+	</div>
+
+    <hr class="featurette-divider">
+    <div>
+        <div class="container">
+            <footer>
+                <p align=center>©USC Data Science Group 2016, All Rights Reserved</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
+    <script src="js/cardpanel.js"></script>
+</body>
+
+</html>
