@@ -1,0 +1,54 @@
+state,count,abbr
+California,7562,CA
+Washington,3330,WA
+Texas,3008,TX
+Florida,2833,FL
+New York,2405,NY
+Arizona,2094,AZ
+Illionis,2056,IL
+Pennsylvania,1789,PA
+Ohio,1677,OH
+Michigan,1546,MI
+Oregon,1408,OR
+Missouri,1221,MO
+North Carolina,1217,NC
+Colorado,1160,CO
+New Jersey,1123,NJ
+Indiana,1042,IN
+Georgia,987,GA
+Virginia,915,VA
+Massachusetts,905,MA
+Wisconsin,902,WI
+Tennessee,875,TN
+Minnesota,753,MN
+Nevada,720,NV
+Kentucky,687,KY
+New Mexico,634,NM
+Maryland,610,MD
+Connecticut,608,CT
+South Carolina,586,SC
+Oklahoma,554,OK
+Arkansas,527,AR
+Kansas,501,KS
+Alabama,492,AL
+Iowa,490,IA
+Utah,473,UT
+Louisiana,454,LA
+Maine,411,ME
+Idaho,361,ID
+New Hampshire,350,NH
+Montana,345,MT
+West Virginia,343,WV
+Nebraska,322,NE
+Mississippi,320,MS
+Hawaii,238,HI
+Alaska,234,AK
+Rhode Island,197,RI
+Vermont,173,VT
+Wyoming,165,WY
+South Dakota,161,SD
+Delaware,126,DE
+North Dakota,113,ND
+"Washington, D.C",96,DC
+Puerto Rico,36,PR
+Virgin Islands,2,VI
