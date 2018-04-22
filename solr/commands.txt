@@ -4,8 +4,20 @@ solr.cmd create -c ufo -s 2 -rf 2
 solr.cmd stop -all
 solr.cmd delete -c ufo
 
-curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-field\": {\"name\":\"sighted_at\", \"type\":\"pdate\", \"multiValued\":false, \"stored\":true}}" http://localhost:8983/solr/ufo/schema
-curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-field\": {\"name\":\"state\", \"type\":\"text_general\", \"multiValued\":false, \"stored\":true}}" http://localhost:8983/solr/ufo/schema
-curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-field\": {\"name\":\"shape\", \"type\":\"text_general\", \"multiValued\":false, \"stored\":true}}" http://localhost:8983/solr/ufo/schema
+curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-field\": {\"name\":\"sighted_at\", \"type\":\"pdate\", \"multiValued\":false, \"stored\":true,\"indexed\":true}}" http://localhost:8983/solr/ufo/schema
+curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-field\": {\"name\":\"state\", \"type\":\"string\", \"multiValued\":false, \"stored\":true,\"indexed\":true}}" http://localhost:8983/solr/ufo/schema
+curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-field\": {\"name\":\"shape\", \"type\":\"string\", \"multiValued\":false, \"stored\":true,\"indexed\":true}}" http://localhost:8983/solr/ufo/schema
 
-curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-copy-field\" : {\"source\":\"*\",\"dest\":\"_text_\"}}\" http://localhost:8983/solr/ufo/schema
+curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-copy-field\" : {\"source\":\"*\",\"dest\":\"_text_\"}}" http://localhost:8983/solr/ufo/schema
+
+
+java -jar -Dc=ufo -Dauto ../example/exampledocs/post.jar "D:/usc_course/Semester-2/csci-599-ContentDetection/week-12/sightings_state.csv"
+
+http://localhost:8983/solr/ufo/select?q=shape:triangle,%20state:CA,%20sighted_at:[2000-01-01T00:00:00.00Z%20TO%202004-12-31T23:59:59.00Z]&rows=0
+
+http://localhost:8983/solr/ufo/select?fl=shape&group=true&group.field=shape&q=shape:*
+
+http://localhost:8983/solr/ufo/select?fl=state&group=true&group.field=state&q=state:*
+
+&group=true&group.field=shape
+facet=true&facet.range=sighted_at&facet.range.start=2000-01-01T00:00:00.00Z&facet.range.end=2010-01-01T00:00:00Z&facet.range.gap=+5YEAR
