@@ -1,33 +1,3 @@
-var margin = {top: 5, right: 40, bottom: 20, left: 120},
-    width = 960 - margin.left - margin.right,
-    height = 50 - margin.top - margin.bottom;
-
-var chart = d3.bullet()
-    .width(width)
-    .height(height);
-
-
-var fetched_all_data = function(shouldInitialize) {
-	
-	if(shouldInitialize) {
-		var svg_d = [];
-		for(shape in shapes) {
-			svg_d.push(shapes[shape]);
-		}
-		initialize(svg_d);
-	}
-	else {
-		var svg_d = svg.data();
-		for(var i = 0; i < svg_d.length; i++) {
-			svg_d[i] = shapes[svg_d[i].title.toLowerCase()];
-		}
-		svg.data(svg_d).call(chart.duration(1000));
-	}
-}
-
-var shapes = {'light':{}, 'triangle':{}, 'fireball':{}, 'sphere':{}, 'disk':{}};
-var len_shapes = 5;
-
 var SOLR_BASE_URL = "http://localhost:8983/solr/ufo/select";
 
 var SOLR_GROUP_BY_STATES_QUERY_PARAM = {
@@ -71,6 +41,38 @@ jQuery.ajax({
   dataType: 'jsonp',
   jsonp: 'json.wrf'
 });
+
+var margin = {top: 5, right: 40, bottom: 20, left: 120},
+    width = 960 - margin.left - margin.right,
+    height = 50 - margin.top - margin.bottom;
+
+var chart = d3.bullet()
+    .width(width)
+    .height(height);
+
+
+var fetched_all_data = function(shouldInitialize) {
+	
+	if(shouldInitialize) {
+		var svg_d = [];
+		for(shape in shapes) {
+			svg_d.push(shapes[shape]);
+		}
+		initialize(svg_d);
+	}
+	else {
+		var svg_d = svg.data();
+		for(var i = 0; i < svg_d.length; i++) {
+			svg_d[i] = shapes[svg_d[i].title.toLowerCase()];
+		}
+		svg.data(svg_d).call(chart.duration(1000));
+	}
+}
+
+var shapes = {'light':{}, 'triangle':{}, 'fireball':{}, 'sphere':{}, 'disk':{}};
+var len_shapes = 5;
+
+
 
 $( "#sel1" ).change(function() {
 	reload_bullet(false);
