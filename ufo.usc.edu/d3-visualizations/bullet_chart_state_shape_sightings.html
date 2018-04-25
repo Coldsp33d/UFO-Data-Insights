@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: relative;
+  width: 960px;
+  margin-top:5px;
+}
+
+button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.bullet { font: 10px sans-serif; }
+.bullet .marker { stroke: #000; stroke-width: 2px; }
+.bullet .tick line { stroke: #666; stroke-width: .5px; }
+.bullet .range.s0 { fill: #eee; }
+.bullet .range.s1 { fill: #ddd; }
+.bullet .range.s2 { fill: #ccc; }
+.bullet .measure.s0 { fill: lightsteelblue; }
+.bullet .measure.s1 { fill: steelblue; }
+.bullet .title { font-size: 14px; font-weight: bold; }
+.bullet .subtitle { fill: #999; }
+
+</style>
+<link rel="stylesheet" href="../css/bootstrap.min.css" />
+
+<script src="../js/jquery.js"></script>
+<script src="../js/d3.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/team6/bullet.js"></script>
+<body style="margin-top:10px;">
+	<div class="container">
+	  <div class="row">
+		<form class="form-inline" style="width: 920px;text-align: right;">
+			<label for="sel1">States:</label>
+				<select class="form-control" id="sel1">
+			</select>
+		</form>
+	  </div>
+	  <div class="row">
+		<div id="bullet-chart" style="margin-top:10px;"></div>
+	  </div>
+	</div>
+</body>
+<script src="../js/team6/solr_bullet_chart_integration.js"></script>

@@ -1,0 +1,14 @@
+solr.cmd stop -all
+solr.cmd delete -c ufo
+solr.cmd start -c -p 8983 -s ../example/cloud/node1/solr
+solr.cmd start -c -p 7574 -s ../example/cloud/node2/solr -z localhost:9983
+solr.cmd create -c ufo -s 2 -rf 2
+
+curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-field\": {\"name\":\"sighted_at\", \"type\":\"pdate\", \"multiValued\":false, \"stored\":true,\"indexed\":true}}" http://localhost:8983/solr/ufo/schema
+curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-field\": {\"name\":\"state\", \"type\":\"string\", \"multiValued\":false, \"stored\":true,\"indexed\":true}}" http://localhost:8983/solr/ufo/schema
+curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-field\": {\"name\":\"shape\", \"type\":\"string\", \"multiValued\":false, \"stored\":true,\"indexed\":true}}" http://localhost:8983/solr/ufo/schema
+
+curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-copy-field\" : {\"source\":\"*\",\"dest\":\"_text_\"}}" http://localhost:8983/solr/ufo/schema
+
+
+java -jar -Dc=ufo -Dauto ../example/exampledocs/post.jar "./sightings_state.csv"
