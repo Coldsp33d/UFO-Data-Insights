@@ -165,7 +165,7 @@
     <div class="container">
         <h5 class="section-title h1">Visualizations</h5>
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick="window.open('../d3-visualizations/choropleth_sightings.html', '_blank');">
+            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" data-toggle="modal" data-target="#exampleModal">
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                     <div class="mainflip">
                         <div class="frontside">
@@ -450,7 +450,22 @@
             </div>
     </div>
 </section>
-
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="height: 500px; width: 960px;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <iframe width="900" height="500" src="../d3-visualizations/showreel_sightings.html"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
 
 
     <!-- jQuery -->
