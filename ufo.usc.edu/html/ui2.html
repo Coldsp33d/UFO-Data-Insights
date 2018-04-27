@@ -15,6 +15,20 @@
     <link href="../css/scrolling-nav.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="../css/styles.css" rel="stylesheet">
+	<script>
+	function clearContent()
+	{
+		$('#exampleModalCenter').modal('close');
+		document.getElementById('myiFrame').src = 'about:blank';
+		
+	}
+	function showModal(loc,title)
+	{
+		document.getElementById('myiFrame').src = loc;
+		document.getElementById('exampleModalLongTitle').innerHTML = title;
+		$('#exampleModalCenter').modal('show');
+	}
+	</script>
     <script src="../js/jquery.js"></script>
     <style>
     <style>
@@ -84,6 +98,9 @@
         transform-style: preserve-3d;
         position: relative;
     }
+	iframe{
+    overflow:hidden;
+}
 
     .frontside
     {
@@ -112,6 +129,20 @@
         -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
         box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
     }
+	.modal-dialog {
+  width: 80%;
+  height: 80%;
+  margin-top: 2%;
+  margin-left: 10%;
+  margin-right: 10%;
+ 
+}
+
+.modal-content {
+  height: auto;
+  min-height: 100%;
+  border-radius: 0;
+}
 
     .frontside,
     .backside
@@ -165,7 +196,7 @@
     <div class="container">
         <h5 class="section-title h1">Visualizations</h5>
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" data-toggle="modal" data-target="#exampleModal">
+            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick='showModal("../d3-visualizations/choropleth_sightings.html","Number of UFO sightings for countries of the world");'>
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                     <div class="mainflip">
                         <div class="frontside">
@@ -183,14 +214,13 @@
                                 <div class="card-body text-xs-center mt-4">
                                     <h4 class="card-title">Choropleth Visualization</h4>
                                     <p class="card-text">The choropleth visualizes each country vs UFO sightings. Utilizes darker shading scheme to indicate higher number of sightings</p>
-                                    <a href="../d3-visualizations/choropleth_sightings.html" target="_blank" class="btn btn-primary btn-sm">More</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick="window.open('../d3-visualizations/piechart_rural_vs_urban.html', '_blank');">
+            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick='showModal("../d3-visualizations/piechart_rural_vs_urban.html","Pie Chart");'>
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                     <div class="mainflip">
                         <div class="frontside">
@@ -215,7 +245,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick="window.open('../d3-visualizations/bargraph_shape.html', '_blank');">
+            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick='showModal("../d3-visualizations/bargraph_shape.html","Shapes of the UFO sightings");'>
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                     <div class="mainflip">
                         <div class="frontside">
@@ -240,7 +270,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick="window.open('../d3-visualizations/horizontal_stacked_distance_duration.html', '_blank');">
+            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick='showModal("../d3-visualizations/horizontal_stacked_distance_duration.html","Distance from airport versus duration of sighting");'>
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                     <div class="mainflip">
                         <div class="frontside">
@@ -265,7 +295,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick="window.open('../d3-visualizations/heatmap_year_month_sightings', '_blank');">
+            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick='showModal("../d3-visualizations/heatmap_year_month_sightings.html","Global Sightings over the years");'>
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                     <div class="mainflip">
                         <div class="frontside">
@@ -290,7 +320,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick="window.open('../d3-visualizations/worldcloud_sightings.html', '_blank');">
+            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick='showModal("../d3-visualizations/worldcloud_sightings.html","Most Frequent Words In UFO Descriptions");'>
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                     <div class="mainflip">
                         <div class="frontside">
@@ -316,7 +346,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick="window.open('../d3-visualizations/bubble_chart_sightings.html', '_blank');">
+            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick='showModal("../d3-visualizations/bubble_chart_sightings.html","Sightings on the basis of the number of states");'>
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                     <div class="mainflip">
                         <div class="frontside">
@@ -341,7 +371,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick="window.open('../d3-visualizations/scatterplot_temperature_precipitation.html', '_blank');">
+            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick='showModal("../d3-visualizations/scatterplot_temperature_precipitation.html","Sightings from top 3 states wrt Temperature and Precipitation");'>
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                     <div class="mainflip">
                         <div class="frontside">
@@ -367,7 +397,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick="window.open('../d3-visualizations/dashboard_elevation_statewise_sightings.html', '_blank');">
+            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick='showModal("../d3-visualizations/dashboard_elevation_statewise_sightings.html","Elevation State Sightings");'>
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                     <div class="mainflip">
                         <div class="frontside">
@@ -393,7 +423,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick="window.open('../d3-visualizations/showreel_sightings.html', '_blank');">
+            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick='showModal("../d3-visualizations/showreel_sightings.html","Showreel of sightings based on country");'>
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                     <div class="mainflip">
                         <div class="frontside">
@@ -419,7 +449,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick="window.open('../d3-visualizations/bullet_chart_state_shape_sightings.html', '_blank');">
+            <div class="col-xs-12 col-sm-6 col-md-4" style="cursor: pointer;" onclick='showModal("../d3-visualizations/bullet_chart_state_shape_sightings","Variations in sightings for shapes and states at 5 years intervals");'>
                 <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                     <div class="mainflip">
                         <div class="frontside">
@@ -451,17 +481,20 @@
     </div>
 </section>
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content" style="height: 500px; width: 960px;">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title" id="exampleModalLongTitle" style="text-align:center; font-style:oblique;">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearContent();">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <iframe width="900" height="500" src="../d3-visualizations/showreel_sightings.html"></iframe>
+		.....
+		<iframe id="myiFrame" height="500" frameborder="0" scrolling="no" width="960" src="../d3-visualizations/showreel_sightings.html" >
+</iframe>
+       
       </div>
     </div>
   </div>
