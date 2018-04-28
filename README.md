@@ -18,6 +18,12 @@ Features our analysis on UFO data obtained from first and second assignments.
 
 Scripts for Generating Data for D3 Visualizations can be found in folder: `d3-data-generation-scripts`
 
+Each script name is the name of the visualization followed by the features it uses for analysis. 
+To run each file: 
+
+	`python dashboard_elevation_statewise_sightings.py`
+
+	The corresponding data file is generated in `ufo.usc.edu\Data` folder
 
 ## Part 2 - Ingesting with Apache Solr
 
