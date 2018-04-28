@@ -12,6 +12,15 @@ Features our analysis on UFO data obtained from first and second assignments.
 
 ## Getting Started
 
-## Part 1 - D3 Visualizations
+## Part 1 - Visualizations with D3
 
-Scripts for Generating Data for D3 Visualizations can be found in folder: d3-data-generation-scripts
+Scripts for Generating Data for D3 Visualizations can be found in folder: `d3-data-generation-scripts`
+
+
+## Part 2 - Ingesting with Apache Solr
+
+## Part 3 - Similarity with Memex ImagCat and Image Space
+
+### Part A - FLANN Plugin 
+
+### Part B - SMQTK Plugin  
