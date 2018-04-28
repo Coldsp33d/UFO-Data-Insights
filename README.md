@@ -1,8 +1,6 @@
 # Content Detection Assignment - 3 - 
 
-Features our analysis on UFO data obtained from first and second assignments. 
-
-[Analysis](http://ufo.usc.edu)
+Features our [analysis](http://ufo.usc.edu) on UFO data obtained from first and second assignments. 
 
 ## Team Members
 
@@ -24,6 +22,8 @@ To run each file:
 	python dashboard_elevation_statewise_sightings.py
 
 The corresponding data file is generated in `ufo.usc.edu\Data` folder
+
+The D3 HTML files that use this data are found in `ufo.usc.edu\d3-visualizations` with the same naming convention. 
 
 ## Part 2 - Ingesting with Apache Solr
 
