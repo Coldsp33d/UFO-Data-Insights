@@ -187,6 +187,10 @@
                 height: 120px;
                 border-radius: 50%;
             }
+			.row{
+				text-align:center;
+				padding:2dp;
+			}
 </style>
   </style>
 </head>
@@ -238,7 +242,6 @@
                                 <div class="card-body text-xs-center mt-4">
                                     <h4 class="card-title">Pie Chart</h4>
                                     <p class="card-text">This pie chart is useful for finding out the relation between the numner of sightings in rural and urban area</p>
-                                    <a href="../d3-visualizations/piechart_rural_vs_urban.html" target="_blank" class="btn btn-primary btn-sm">More</a>
                                 </div>
                             </div>
                         </div>
@@ -263,7 +266,6 @@
                                 <div class="card-body text-xs-center mt-4">
                                     <h4 class="card-title">Bar Graph</h4>
                                     <p class="card-text">The bar chart visualizes the number of sightings with respect to the respective shape of the UFO on x-axis.</p>
-                                    <a href="../d3-visualizations/bargraph_shape.html" target="_blank" class="btn btn-primary btn-sm">More</a>
                                 </div>
                             </div>
                         </div>
@@ -288,7 +290,6 @@
                                 <div class="card-body text-xs-center mt-4">
                                     <h4 class="card-title">Horizontal Stacked Chart</h4>
                                     <p class="card-text">Depicts the distance from airport ordered from closest to farthest and the corresponding number of UFO sightings. This is for 3 duration ranges.</p>
-                                    <a href="../d3-visualizations/horizontal_stacked_distance_duration.html" target="_blank" class="btn btn-primary btn-sm">More</a>
                                 </div>
                             </div>
                         </div>
@@ -313,7 +314,6 @@
                                 <div class="card-body text-xs-center mt-4">
                                     <h4 class="card-title">Heatmap: Year-Month Sightings Over a Decade</h4>
                                     <p class="card-text">Shows the number of sightings globally broken down by year and month. The sightings cover a period of 10 years from 2005-2015</p>
-                                    <a href="../d3-visualizations/heatmap_year_month_sightings.html" target="_blank" class="btn btn-primary btn-sm">More</a>
                                 </div>
                             </div>
                         </div>
@@ -339,7 +339,6 @@
                                 <div class="card-body text-xs-center mt-4">
                                     <h4 class="card-title">Word Cloud</h4>
                                     <p class="card-text">A word cloud to depict the most frequent words used in UFO descriptions. The words whose frequency is high occupy more area on the cloud</p>
-                                    <a href="../d3-visualizations/worldcloud_sightings.html" target="_blank" class="btn btn-primary btn-sm">More</a>
                                 </div>
                             </div>
                         </div>
@@ -364,7 +363,7 @@
                                 <div class="card-body text-xs-center mt-4">
                                     <h4 class="card-title">Bubble Chart</h4>
                                     <p class="card-text">A bubble chart to depict the number of sightings based on the number of state</p>
-                                    <a href="../d3-visualizations/bubble_chart_sightings.html" target="_blank" class="btn btn-primary btn-sm">More</a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -390,7 +389,6 @@
                                 <div class="card-body text-xs-center mt-4">
                                     <h4 class="card-title">Scatter Plot</h4>
                                     <p class="card-text">A scatter plot of temperature vs precipitation for the 3 states with most number of UFO sightings in United States</p>
-                                    <a href="../d3-visualizations/scatterplot_temperature_precipitation.html" target="_blank" class="btn btn-primary btn-sm">More</a>
                                 </div>
                             </div>
                         </div>
@@ -404,7 +402,7 @@
                             <div class="card">
                                 <div class="card-body text-xs-center">
                                     <p>
-                                        <img class=" img-fluid" alt="vizualization1" src="../images/dashboard_elevation_statewise_sightings.png" /></p>
+                                        <img class="img-fluid" style="width:250px;" alt="vizualization1" src="../images/dashboard_elevation_statewise_sightings.png" /></p>
                                     <h4 class="card-title">Elevation State Sightings</h4>
                                     <p class="card-text">Relation of elevation and no of sightings per state in USA</p>
                                     
@@ -416,7 +414,6 @@
                                 <div class="card-body text-xs-center mt-4">
                                     <h4 class="card-title">Dashboard: Elevation-State Relation</h4>
                                     <p class="card-text">Responsive dashboard which shows the relation of number of sightings to the elevation in the United States. <ul>Elevation divided in 3 ranges: <li>1. 0-500 feet above mean sea level</li> <li>2. 500-1,000 feet above mean sea level</li> <li>3. Greater than 1,000 feet above mean sea level</li></ul> The top 10 states with the maximum number of sighitngs in the United States are chosen. The number of sightings for each elevation range for each state can be viewed. The percentage distribution of sightings across all states for each elevation range is also viewable </p>
-                                    <a href="../d3-visualizations/dashboard_elevation_statewise_sightings.html" target="_blank" class="btn btn-primary btn-sm">More</a>
                                 </div>
                             </div>
                         </div>
@@ -442,7 +439,6 @@
                                 <div class="card-body text-xs-center mt-4">
                                     <h4 class="card-title">Showreel of sightings based on country</h4>
                                     <p class="card-text">A small showreel which consists of various vizualizations like trends, pie chart etc</p>
-                                    <a href="../d3-visualizations/showreel_sightings.html" target="_blank" class="btn btn-primary btn-sm">More</a>
                                 </div>
                             </div>
                         </div>
@@ -471,7 +467,6 @@
                                     <p class="card-text">A bullet chart that indicates variations in sightings for shape and state at 5 year facets.</br>
 									It leverages SOLR web services for dynamically updating the contents of the bullet chart.</br>The states can be selected from dropdown for observing changes in data.<br/>For this visualization to work data has to be ingested into SOLR using the data ingestion scripts.
 									</p>
-                                    <a href="../d3-visualizations/bullet_chart_state_shape_sightings.html" target="_blank" class="btn btn-primary btn-sm">More</a>
                                 </div>
                             </div>
                         </div>
