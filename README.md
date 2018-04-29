@@ -88,4 +88,14 @@ Will return the top 10 most similar images to the 71209.jpg.
 
 
 ### Part B - SMQTK Plugin  
-
+1. `cd image_space/imagespace_smqtk/`
+2. Run the following commands
+	```
+		sudo ./smqtk_services.run_images.sh --docker-network docker_imagespace-network --images /home/koustav/images
+		sudo docker exec -it deploy_imagespace-mongo_1 mongo girder --eval 'db.setting.update({key: "core.plugins_enabled"}, {$push: {value: "imagespace_smqtk"}})'
+		sudo docker exec -it deploy_imagespace-mongo_1 mongo girder --eval 'db.setting.insert({key: "IMAGE_SPACE_SMQTK_NNSS_URL", value: "http://smqtk-services:12345"})'
+		sudo docker exec -it deploy_imagespace-mongo_1 mongo girder --eval 'db.setting.insert({key: "IMAGE_SPACE_SMQTK_IQR_URL", value: "http://smqtk-services:12346"})'
+		sudo docker exec -it deploy_imagespace-mongo_1 mongo girder --eval 'db.setting.insert({key: "IMAGE_SPACE_DEFAULT_SIMILARITY_SEARCH", value: "smqtk-similarity"})'
+		sudo docker exec -it deploy_imagespace-girder_1 touch /girder/girder/conf/girder.dist.cfg
+	```
+3. Go to localhost:8989 search for jpg images and then click the search icon (image similarity SMQTK plugin) and it will show up the relevant images
