@@ -23,7 +23,10 @@ To run each file:
 
 The corresponding data file is generated in `ufo.usc.edu\Data` folder
 
-The D3 HTML files that use this data are found in `ufo.usc.edu\d3-visualizations` with the same naming convention. 
+The D3 HTML files that use this data are found in `ufo.usc.edu\d3-visualizations` with the same naming convention.
+
+## Note - Sometimes it might happen the vizualization doesn't load.Please perform the below changes:
+*Right click ->Frame -> Reload Frame*
 
 ## Part 2 - Ingesting with Apache Solr
 
@@ -31,33 +34,43 @@ The commands to create a Solr index are all  listed in `solr\commands.txt`
 
 1. Delete any containers with the name "ufo" 
 
-``	
-	solr.cmd delete -c ufo
-``
+	``	
+		solr.cmd delete -c ufo
+	``
 
 2. Create a new container for the data you wish to ingest
 
-``
-	solr.cmd create -c ufo -s 2 -rf 2
-``
+	``
+		solr.cmd create -c ufo -s 2 -rf 2
+	``
 
 3. Create a schema for your index
 
-````
-curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-field\": {\"name\":\"sighted_at\", \"type\":\"pdate\", \"multiValued\":false, \"stored\":true,\"indexed\":true}}" http://localhost:8983/solr/ufo/schema
+	````
+	curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-field\": {\"name\":\"sighted_at\", \"type\":\"pdate\", \"multiValued\":false, \"stored\":true,\"indexed\":true}}" http://localhost:8983/solr/ufo/schema
 
-curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-field\": {\"name\":\"state\", \"type\":\"string\", \"multiValued\":false, \"stored\":true,\"indexed\":true}}" http://localhost:8983/solr/ufo/schema
+	curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-field\": {\"name\":\"state\", \"type\":\"string\", \"multiValued\":false, \"stored\":true,\"indexed\":true}}" http://localhost:8983/solr/ufo/schema
 
-curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-field\": {\"name\":\"shape\", \"type\":\"string\", \"multiValued\":false, \"stored\":true,\"indexed\":true}}" http://localhost:8983/solr/ufo/schema
+	curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-field\": {\"name\":\"shape\", \"type\":\"string\", \"multiValued\":false, \"stored\":true,\"indexed\":true}}" http://localhost:8983/solr/ufo/schema
 
-curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-copy-field\" : {\"source\":\"*\",\"dest\":\"_text_\"}}" http://localhost:8983/solr/ufo/schema
-````
+	curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-copy-field\" : {\"source\":\"*\",\"dest\":\"_text_\"}}" http://localhost:8983/solr/ufo/schema
+	````
 
 4. Ingest your index
 
-``
-	java -jar -Dc=ufo -Dauto ../example/exampledocs/post.jar "./sightings_state.csv"
-``	
+	``
+		java -jar -Dc=ufo -Dauto ../example/exampledocs/post.jar "./sightings_state.csv"
+	``
+
+5. Run the dynamic visualization
+
+	Data insights of shape aggregated over 5 years for each state is depicted with a bullet chart that invokes Solr RESTful web services using JSON. Data is dynamically loaded when the state is changed.
+
+	The JavaScript file containing the data can be found at `ufo.usc.edu/js/team6/solr_bullet_chart_integration.js`
+
+	The corresponding HTML file is at `ufo.usc.edu/d3-visualizations/bullet_chart_state_shape_sightings.html`
+	
+	
 
 ## Part 3 - Similarity with Memex ImageCat and Image Space
 
