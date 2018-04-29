@@ -76,4 +76,16 @@ The commands to create a Solr index are all  listed in `solr\commands.txt`
 
 ### Part A - FLANN Plugin 
 
+1. `cd image_space/flann_index/`
+2. Run `flann_index.py`, generating the image mappings 
+3. Start the webservice with tangelo. Run `./start.sh`
+
+You can now make get requests to port 9220. For example,
+
+    curl "http://localhost:9220?query=/path/to/images/71209.jpg&k=10"
+
+Will return the top 10 most similar images to the 71209.jpg.
+
+
 ### Part B - SMQTK Plugin  
+
