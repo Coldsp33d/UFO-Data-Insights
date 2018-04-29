@@ -26,7 +26,7 @@ The corresponding data file is generated in `ufo.usc.edu\Data` folder
 The D3 HTML files that use this data are found in `ufo.usc.edu\d3-visualizations` with the same naming convention.
 
 ## Note - Sometimes it might happen the vizualization doesn't load.Please perform the below changes:
-	         `` Right click ->Frame -> Reload Frame `` 
+*Right click ->Frame -> Reload Frame*
 
 ## Part 2 - Ingesting with Apache Solr
 
