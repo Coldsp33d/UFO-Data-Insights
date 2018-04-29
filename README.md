@@ -58,6 +58,10 @@ curl -X POST -H 'Content-type:application/json' --data-binary "{\"add-copy-field
 ``
 	java -jar -Dc=ufo -Dauto ../example/exampledocs/post.jar "./sightings_state.csv"
 ``	
+5. Run the dynamic visualization
+Data insights of shape aggregated over 5 years for each state is depicted with a bullet chart that invokes SOLR restful web services using JSONP. Data is dynamically loaded when the state is changed.
+The JavaScript file containing the data can be found at `ufo.usc.edu/js/team6/solr_bullet_chart_integration.js`
+The corresponding HTML file is at `ufo.usc.edu/d3-visualizations/bullet_chart_state_shape_sightings.html`
 
 ## Part 3 - Similarity with Memex ImageCat and Image Space
 
