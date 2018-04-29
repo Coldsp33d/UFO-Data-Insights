@@ -23,7 +23,10 @@ To run each file:
 
 The corresponding data file is generated in `ufo.usc.edu\Data` folder
 
-The D3 HTML files that use this data are found in `ufo.usc.edu\d3-visualizations` with the same naming convention. 
+The D3 HTML files that use this data are found in `ufo.usc.edu\d3-visualizations` with the same naming convention.
+
+## Note - Sometimes it might happen the vizualization doesn't load.Please perform the below changes:
+	         ''' Right click ->Frame -> Reload Frame ''' 
 
 ## Part 2 - Ingesting with Apache Solr
 
@@ -66,6 +69,8 @@ The commands to create a Solr index are all  listed in `solr\commands.txt`
 	The JavaScript file containing the data can be found at `ufo.usc.edu/js/team6/solr_bullet_chart_integration.js`
 
 	The corresponding HTML file is at `ufo.usc.edu/d3-visualizations/bullet_chart_state_shape_sightings.html`
+	
+	
 
 ## Part 3 - Similarity with Memex ImageCat and Image Space
 
