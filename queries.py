@@ -3,7 +3,7 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 
 from pandas.tseries.offsets import MonthBegin
-
+nltk.download('wordnet')
 lemmatizer = WordNetLemmatizer()
 today = pd.to_datetime('today')
 
