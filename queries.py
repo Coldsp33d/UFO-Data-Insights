@@ -1,5 +1,7 @@
 import pandas as pd
 import nltk
+import itertools
+from collections import Counter
 from nltk.stem import WordNetLemmatizer
 
 from pandas.tseries.offsets import MonthBegin
@@ -45,7 +47,7 @@ st = df.state.value_counts().nlargest(3).index
 )
 
 # --- wordcloud --- #
-with open('Data/Resources/stopwords.txt') as f:
+with open('Data/Resources/stopwords.txt', encoding='utf-8') as f:
 	stopwords = set(
 		itertools.chain.from_iterable(x.split('\t') for x in f.read().splitlines())
 	)
@@ -84,4 +86,21 @@ v['sighted_at'] = v.sighted_at.dt.strftime('%b %Y')
 
 
 v[['country', 'sighted_at', 'sightings']].to_csv('Data/shoreel-summary.csv', index=False, header=None)
+
+# --- urban v/s rural --- #
+df['is_urban'].map({True: 'urban', False : 'rural' }).value_counts(normalize=True).to_csv('Data/urban-rural-ratio.csv')
+
+# --- state dist --- #
+states = json.load(open('Data/Resources/states.json'))
+v = df.assign(abbr=df['state'])[['state', 'abbr']]
+v['state'] = v['state'].map(states)
+v = v.dropna(subset=['state'])
+(v.groupby(['state', 'abbr'])
+  .size()
+  .sort_values(ascending=False)
+  .reset_index(name='count')[['state', 'count', 'abbr']]
+  .to_csv('Data/bubble_chart_sightings.csv', index=False)
+)
+
+
 
